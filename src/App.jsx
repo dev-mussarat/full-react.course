@@ -1,26 +1,31 @@
-import React from 'react'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Hero from './components/ui/Hero'
-import feature from './components/ui/Imagine'
-import Feedback1 from './components/feedback1'
-import Feedback2 from './components/ui/feedback2'
+import React from "react";
+import ProductCard from "./components/ProductCard";
+import products from "./data/products";
+import "./index.css";
 
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Navbar/>
-     <Hero/>
-    <Imagine/>
-    <Feedback1/>
-    <Feedback2/>
-    <Feedback1/>
-    <Feedback2/>
-   
+    <div className="main">
+      <header className="header">
+        <h1>Daraz Front Page</h1>
+        <p>Shop top-rated products at the best prices!</p>
+      </header>
+
+      <div className="product-container">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            image={product.image}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            rating={product.rating}
+          />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
