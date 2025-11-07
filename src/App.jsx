@@ -1,31 +1,22 @@
 import React from "react";
-import ProductCard from "./components/ProductCard";
-import products from "./data/products";
-import "./index.css";
+import PasswordPopup from "./PasswordPopup";
 
-
-function App() {
+const App = () => {
   return (
-    <div className="main">
-      <header className="header">
-        <h1>Daraz Front Page</h1>
-        <p>Shop top-rated products at the best prices!</p>
-      </header>
-
-      <div className="product-container">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            image={product.image}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            rating={product.rating}
-          />
-        ))}
-      </div>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f3f4f6",
+      }}
+    >
+      <PasswordPopup />
     </div>
   );
-}
+};
 
 export default App;
+
+
